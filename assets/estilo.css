@@ -1,0 +1,185 @@
+:root{
+  --bg:#f7f7fb;--surface:#ffffff;--fg:#14151a;--muted:#5b6070;--line:#e4e5ee;
+  --accent:#7c4dff;--accent-2:#16c79a;--mx:#0f7b4f;--mx-bg:#e8f7ef;
+  --shadow:0 1px 2px rgba(20,21,26,.06),0 4px 16px rgba(20,21,26,.06);
+  --radius:14px;--font-title:"Space Grotesk",system-ui,sans-serif;--font-body:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0d0e13;--surface:#161821;--fg:#ecedf3;--muted:#9da2b3;--line:#262938;
+  --accent:#9d7bff;--accent-2:#2fe0b0;--mx:#4fd19a;--mx-bg:#11261d;--shadow:none}}
+:root[data-theme="dark"]{--bg:#0d0e13;--surface:#161821;--fg:#ecedf3;--muted:#9da2b3;--line:#262938;--accent:#9d7bff;--accent-2:#2fe0b0;--mx:#4fd19a;--mx-bg:#11261d;--shadow:none}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 var(--font-body)}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--accent)}
+.envoltura{max-width:1140px;margin:0 auto;padding:0 16px}
+.lectura{max-width:700px;min-width:0}
+/* Encabezado */
+.barra{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--surface) 92%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.barra .envoltura{display:flex;align-items:center;gap:18px;height:62px}
+.marca{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--fg);font:700 1.3rem/1 var(--font-title);letter-spacing:-.02em}
+.marca img{width:34px;height:34px}
+.marca b{color:var(--accent)}
+.menu{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.menu::-webkit-scrollbar{display:none}
+.menu a{white-space:nowrap;text-decoration:none;color:var(--muted);font-weight:600;font-size:.92rem;padding:8px 12px;border-radius:999px}
+.menu a:hover,.menu a[aria-current="page"]{color:var(--fg);background:var(--bg)}
+@media (max-width:640px){.barra .envoltura{height:auto;flex-wrap:wrap;padding-top:10px;padding-bottom:6px;gap:6px}.menu{margin-left:-10px;width:calc(100% + 26px);padding-right:16px;mask-image:linear-gradient(90deg,#000 85%,transparent)}.menu a{padding:8px 10px}.menu a[href="/"]{display:none}}
+/* Portada del sitio */
+.cabecera{padding:28px 0 8px}
+.cabecera h1{font:700 clamp(1.6rem,3.4vw,2.3rem)/1.15 var(--font-title);margin:0 0 6px;letter-spacing:-.02em}
+.cabecera p{margin:0;color:var(--muted)}
+.cabecera h1{text-wrap:balance}
+.rejilla{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:28px;padding:22px 0 56px}
+@media (max-width:960px){.rejilla{grid-template-columns:1fr}}
+.destacada{display:grid;grid-template-columns:1.25fr 1fr;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;text-decoration:none;color:var(--fg);box-shadow:var(--shadow)}
+.destacada .texto{padding:22px 24px;display:flex;flex-direction:column;justify-content:center}
+.destacada h2{font:700 clamp(1.35rem,2.4vw,1.75rem)/1.2 var(--font-title);margin:.35em 0}
+.destacada p{color:var(--muted);margin:0}
+.destacada .fecha{margin-top:12px}
+.destacada .media{background:#0d0e13;display:flex;align-items:center}
+@media (max-width:720px){.destacada{grid-template-columns:1fr}}
+.filtros{display:flex;gap:8px;flex-wrap:wrap;margin:26px 0 14px}
+.filtros button{font:600 .88rem var(--font-body);border:1px solid var(--line);background:var(--surface);color:var(--muted);padding:7px 14px;border-radius:999px;cursor:pointer}
+.filtros button[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.tarjetas{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.tarjeta{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;text-decoration:none;color:var(--fg);box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .15s,border-color .15s}
+.tarjeta:hover,.destacada:hover{border-color:var(--accent)}
+.tarjeta:hover{transform:translateY(-2px)}
+.tarjeta .texto{padding:14px 16px 18px}
+.tarjeta h3{font:700 1.08rem/1.3 var(--font-title);margin:.35em 0}
+.tarjeta p{margin:0;color:var(--muted);font-size:.93rem;line-height:1.5}
+.portada{aspect-ratio:16/9;width:100%;object-fit:cover;background:var(--line)}
+.vacio{color:var(--muted);padding:24px;border:1px dashed var(--line);border-radius:var(--radius);text-align:center}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:.76rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:color-mix(in srgb,var(--cat,var(--accent)) 60%,var(--fg))}
+.chip::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--cat,var(--accent))}
+.fecha{color:var(--muted);font-size:.85rem}
+/* Barra lateral */
+.lateral{display:flex;flex-direction:column;gap:18px}
+.caja{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.caja h2{font:700 1rem/1.2 var(--font-title);margin:0 0 10px;display:flex;align-items:center;gap:8px}
+.caja ul{list-style:none;margin:0;padding:0}
+.caja li{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-top:1px solid var(--line);font-size:.92rem}
+.caja li:first-child{border-top:0}
+.caja li a{color:var(--fg);text-decoration:none}
+.caja li strong{white-space:nowrap}
+.caja small{color:var(--muted);display:block;margin-top:8px}
+.caja.mx{background:var(--mx-bg);border-color:transparent}
+.caja.mx h2{color:var(--mx)}
+.caja p{margin:0;font-size:.92rem;color:var(--muted)}
+/* Nota */
+.migas{font-size:.85rem;color:var(--muted);padding-top:22px}
+.migas a{color:var(--muted)}
+.nota h1{font:700 clamp(1.7rem,4vw,2.5rem)/1.15 var(--font-title);letter-spacing:-.02em;margin:.3em 0 .35em}
+.nota .bajada{font-size:1.15rem;color:var(--muted);margin:0 0 14px}
+.firma{display:flex;gap:10px;align-items:center;color:var(--muted);font-size:.88rem;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:22px;flex-wrap:wrap}
+.nota .portada{border-radius:var(--radius);margin:0 0 26px}
+.nota h2{font:700 1.35rem/1.25 var(--font-title);margin:1.8em 0 .5em}
+.nota table{border-collapse:collapse;width:100%;font-size:.95rem;background:var(--surface);border-radius:10px;overflow:hidden}
+.nota th{font-size:.78rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.nota th,.nota td{border-bottom:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+.nota td:last-child{white-space:nowrap}
+.tabla{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+.en-mexico{background:var(--mx-bg);border-radius:var(--radius);padding:6px 20px 14px;margin:2em 0;border:1px solid color-mix(in srgb,var(--mx) 25%,transparent)}
+.en-mexico h2{color:var(--mx);margin-top:.8em}
+.en-mexico h2::before{content:"🇲🇽 "}
+.en-mexico .tabla{background:var(--surface)}
+.fuente{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;padding:6px 18px;margin-top:2em;font-size:.92rem;color:var(--muted)}
+.compartir{display:flex;gap:8px;flex-wrap:wrap;margin:26px 0}
+.compartir a{font-weight:600;font-size:.88rem;text-decoration:none;border:1px solid var(--line);background:var(--surface);color:var(--fg);padding:8px 14px;border-radius:999px}
+.relacionadas{border-top:1px solid var(--line);margin-top:34px;padding:26px 0 50px}
+.relacionadas h2{font:700 1.2rem var(--font-title);margin:0 0 14px}
+/* Espacio reservado para anuncios (se activa con AdSense) */
+.anuncio{display:none}
+body.con-anuncios .anuncio{display:flex;align-items:center;justify-content:center;min-height:280px;margin:24px 0;background:var(--bg);border:1px dashed var(--line);border-radius:10px;position:relative;grid-column:1/-1}
+body.con-anuncios .anuncio::before{content:"Publicidad";position:absolute;top:6px;left:10px;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+body.con-anuncios .lateral .anuncio{min-height:600px;margin:0;position:sticky;top:80px}
+.pagina{padding:10px 0 56px}
+.pagina h1{font:700 2rem/1.2 var(--font-title)}
+.pie{border-top:1px solid var(--line);background:var(--surface);color:var(--muted);font-size:.9rem;padding:28px 0 36px}
+.pie .envoltura{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.pie a{color:var(--muted);margin-right:14px}
+.pie p{margin:.3em 0}
+
+/* ---- Accesibilidad ---- */
+.saltar{position:absolute;left:-9999px;top:8px;z-index:20;background:var(--fg);color:var(--bg);padding:10px 14px;border-radius:8px;font-weight:700}
+.saltar:focus{left:16px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
+[id]{scroll-margin-top:84px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+/* ---- Barra "Hoy se habla de" ---- */
+.temas{border-bottom:1px solid var(--line);background:var(--surface)}
+.temas .envoltura{display:flex;align-items:center;gap:12px;min-height:44px}
+.temas-titulo{flex:none;font:700 .72rem/1 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.temas ul{display:flex;gap:6px;list-style:none;margin:0;padding:6px 16px 6px 0;overflow-x:auto;scrollbar-width:none;mask-image:linear-gradient(90deg,#000 88%,transparent)}
+.temas ul::-webkit-scrollbar{display:none}
+.temas a{display:block;white-space:nowrap;text-decoration:none;color:var(--fg);font-size:.85rem;font-weight:600;padding:5px 11px;border-radius:999px;background:var(--bg);border:1px solid var(--line)}
+.temas a:hover{border-color:var(--accent);color:var(--accent)}
+/* ---- Portada: promesa y bloques ---- */
+.promesa{display:flex;flex-wrap:wrap;gap:8px 18px;list-style:none;margin:10px 0 0;padding:0;color:var(--muted);font-weight:600;font-size:.95rem}
+.promesa li{display:flex;align-items:center;gap:8px}
+.promesa b{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:8px;background:var(--mx-bg);color:var(--mx);font-size:.85rem}
+.titulo-seccion{font:700 1.2rem/1.2 var(--font-title);margin:30px 0 14px}
+.dato-mx{display:inline-flex;align-self:flex-start;margin-top:12px;font-size:.85rem;font-weight:700;color:var(--mx);background:var(--mx-bg);padding:5px 10px;border-radius:8px;line-height:1.35}
+.hace:not(:empty)::before{content:" · "}
+/* ---- Calendario ---- */
+.calendario li{justify-content:flex-start;align-items:flex-start;gap:12px;padding:10px 0}
+.calendario .dia{flex:none;width:46px;text-align:center;border-radius:10px;background:var(--bg);border:1px solid var(--line);padding:4px 0 5px;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);line-height:1.1}
+.calendario .dia b{display:block;font:700 1.3rem/1.1 var(--font-title);color:var(--fg)}
+.calendario .evento{display:block;font-weight:600;line-height:1.35}
+.calendario .evento a{color:var(--fg);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+.calendario .cuando{display:block;color:var(--muted);font-size:.82rem;margin-top:2px}
+.calendario .cuando a{color:var(--muted)}
+.etiqueta{display:inline-block;margin:6px 6px 0 0;font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:2px 7px;border-radius:6px;background:var(--bg);color:var(--muted);border:1px solid var(--line)}
+.etiqueta.pendiente{color:#92400e;background:#fef3c7;border-color:#fde68a}
+.etiqueta.hoy{color:var(--mx);background:var(--mx-bg);border-color:transparent}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .etiqueta.pendiente{color:#fcd34d;background:#2a2110;border-color:#4a3a12}}
+:root[data-theme="dark"] .etiqueta.pendiente{color:#fcd34d;background:#2a2110;border-color:#4a3a12}
+/* ---- Nota ---- */
+.nota-rejilla{padding-top:0}
+.ir-mexico{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:center;justify-content:space-between;text-decoration:none;color:var(--fg);background:var(--mx-bg);border:1px solid color-mix(in srgb,var(--mx) 25%,transparent);border-radius:12px;padding:12px 16px;margin:0 0 22px;font-size:.95rem}
+.ir-mexico .ir-titulo{font:700 1.02rem/1.2 var(--font-title);color:var(--mx)}
+.ir-mexico:hover{border-color:var(--mx)}
+.firma a{color:var(--muted)}
+.nota p,.nota li{text-wrap:pretty}
+@media (max-width:520px){.nota th,.nota td{padding:9px 9px}.en-mexico{padding:6px 14px 12px;margin-left:-4px;margin-right:-4px}}
+/* ---- Componente "Precio en México por tienda" (ver README) ---- */
+.precio-mx{background:var(--surface);border:1px solid var(--line);border-radius:12px;margin:1.4em 0;overflow:hidden}
+.precio-mx-titulo{margin:0;padding:12px 16px;font:700 1rem/1.3 var(--font-title);border-bottom:1px solid var(--line)}
+.precio-mx ul{list-style:none;margin:0;padding:0}
+.precio-mx li{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"tienda monto" "detalle accion";gap:2px 12px;align-items:center;padding:12px 16px;border-top:1px solid var(--line)}
+.precio-mx li:first-child{border-top:0}
+.precio-mx .tienda{grid-area:tienda;font-weight:700}
+.precio-mx .monto{grid-area:monto;font:700 1.15rem/1.2 var(--font-title);white-space:nowrap;text-align:right}
+.precio-mx .detalle{grid-area:detalle;color:var(--muted);font-size:.85rem}
+.precio-mx li>a{grid-area:accion;justify-self:end;font-size:.85rem;font-weight:700;text-decoration:none;color:var(--accent);white-space:nowrap}
+.precio-mx li.mejor{background:var(--mx-bg)}
+.precio-mx li.mejor .monto{color:var(--mx)}
+.precio-mx li.mejor .tienda::after{content:"Más barato";margin-left:8px;font-size:.66rem;letter-spacing:.05em;text-transform:uppercase;color:var(--mx);border:1px solid currentColor;border-radius:6px;padding:1px 6px;vertical-align:2px}
+.precio-mx .precio-antes{grid-area:detalle;color:var(--muted);font-size:.85rem}
+.precio-mx s{color:var(--muted)}
+.precio-mx-nota{margin:0;padding:10px 16px;font-size:.82rem;color:var(--muted);border-top:1px solid var(--line);background:var(--bg)}
+.aviso-afiliados{font-size:.82rem;color:var(--muted);border-left:3px solid var(--line);padding:2px 0 2px 12px;margin:0 0 20px}
+/* ---- Newsletter / redes (solo aparece si config.json tiene cuentas reales) ---- */
+.suscripcion .boton{display:inline-block;margin-top:12px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;padding:9px 16px;border-radius:999px}
+.suscripcion .redes,.pie .redes{display:flex;flex-wrap:wrap;gap:8px 14px;margin-top:10px}
+.pie .redes span{font-weight:700}
+.etiquetas{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.etiquetas .etiqueta{margin:0}
+.calendario.ancho{margin-top:26px}
+.calendario.ancho h2{font-size:1.2rem;margin-bottom:6px}
+@media (min-width:720px){.calendario.ancho ul{display:grid;grid-template-columns:1fr 1fr;column-gap:28px}.calendario.ancho li:nth-child(2){border-top:0}}
+@media (max-width:520px){.promesa{font-size:.9rem;gap:8px 14px}}
+.nota-rejilla>.lateral{padding-top:22px}
+.precio-mx li.mejor .tienda::after{display:inline-block;white-space:nowrap}
+@media (max-width:520px){
+ .firma{gap:2px 0;flex-direction:column;align-items:flex-start}.firma .sep{display:none}
+ .nota td:not(:first-child),.nota th:not(:first-child){white-space:nowrap}
+ .nota td:first-child{min-width:130px}
+}
+/* Sombra en el borde de las tablas anchas: indica que se pueden deslizar */
+.tabla{background:linear-gradient(90deg,var(--surface) 30%,transparent) left/40px 100% no-repeat local,linear-gradient(270deg,var(--surface) 30%,transparent) right/40px 100% no-repeat local,radial-gradient(farthest-side at 0 50%,color-mix(in srgb,var(--fg) 28%,transparent),transparent) left/14px 100% no-repeat scroll,radial-gradient(farthest-side at 100% 50%,color-mix(in srgb,var(--fg) 28%,transparent),transparent) right/14px 100% no-repeat scroll,var(--surface)}
+.en-mexico .tabla{background-color:var(--surface)}
+.nota .tabla table{background:transparent}
