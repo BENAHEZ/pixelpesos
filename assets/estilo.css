@@ -183,3 +183,14 @@ html{scroll-behavior:smooth}
 .tabla{background:linear-gradient(90deg,var(--surface) 30%,transparent) left/40px 100% no-repeat local,linear-gradient(270deg,var(--surface) 30%,transparent) right/40px 100% no-repeat local,radial-gradient(farthest-side at 0 50%,color-mix(in srgb,var(--fg) 28%,transparent),transparent) left/14px 100% no-repeat scroll,radial-gradient(farthest-side at 100% 50%,color-mix(in srgb,var(--fg) 28%,transparent),transparent) right/14px 100% no-repeat scroll,var(--surface)}
 .en-mexico .tabla{background-color:var(--surface)}
 .nota .tabla table{background:transparent}
+/* Imagen oficial y tráiler (11 nov 2026) */
+.oficial{margin:0 0 26px}
+.oficial .portada{border-radius:var(--radius);margin:0;background:#0d0e13}
+.oficial figcaption,.video .credito{font-size:.82rem;color:var(--muted);margin-top:6px}
+.oficial figcaption a,.video .credito a{color:var(--muted)}
+.video{margin:2em 0}
+.yt{position:relative;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;background:#0d0e13 center/cover no-repeat;display:flex;align-items:center;justify-content:center}
+.yt::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.55))}
+.yt button{position:relative;font:700 1rem var(--font-body);color:#fff;background:#e62117;border:0;border-radius:999px;padding:12px 22px;cursor:pointer;box-shadow:0 4px 18px rgba(0,0,0,.35)}
+.yt button:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}

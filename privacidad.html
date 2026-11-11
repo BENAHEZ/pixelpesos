@@ -40,6 +40,8 @@
 <p>Podemos usar Google Analytics para saber cuántas personas visitan el sitio y qué notas leen. Google recopila datos técnicos (tipo de dispositivo, navegador, ubicación aproximada) mediante cookies. Más información en la <a href="https://policies.google.com/privacy?hl=es-419">política de privacidad de Google</a>.</p>
 <h2>Publicidad</h2>
 <p>Este sitio puede mostrar anuncios de Google AdSense. Google y sus socios usan cookies para mostrar anuncios basados en visitas anteriores a este y otros sitios. Puedes desactivar los anuncios personalizados en la <a href="https://adssettings.google.com/">configuración de anuncios de Google</a>. Más información sobre <a href="https://policies.google.com/technologies/ads?hl=es-419">cómo usa Google las cookies en publicidad</a>.</p>
+<h2>Imágenes y videos</h2>
+<p>Algunas notas muestran imágenes oficiales cargadas desde el sitio de la empresa que las publica (por ejemplo, Nintendo o Sony) y tráileres de YouTube. El video de YouTube solo se carga cuando tocas "Ver tráiler"; desde ese momento YouTube puede usar cookies según su <a href="https://policies.google.com/privacy?hl=es-419">política de privacidad</a>.</p>
 <h2>Enlaces a otros sitios</h2>
 <p>Nuestras notas enlazan a las fuentes originales y a tiendas. Esos sitios tienen sus propias políticas de privacidad.</p>
 <h2>Contacto</h2>
@@ -54,6 +56,10 @@
 var m=(a-new Date(s.dataset.desde))/6e4,t;if(!(m>=0))return;
 if(m<60)t='hace '+Math.max(1,Math.round(m))+' min';else if(m<1440)t='hace '+Math.round(m/60)+' h';
 else if(m<2880)t='ayer';else if(m<10080)t='hace '+Math.round(m/1440)+' días';else return;s.textContent=t;});})();
+document.querySelectorAll('.yt').forEach(function(y){y.querySelector('button').addEventListener('click',function(){
+var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+y.dataset.id+'?autoplay=1&rel=0';
+f.title=y.querySelector('button').getAttribute('aria-label');f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;
+y.innerHTML='';y.appendChild(f);});});
 </script>
 </body>
 </html>

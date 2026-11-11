@@ -38,11 +38,11 @@
 <main class="envoltura" id="contenido">
 <section class="cabecera"><span class="chip" style="--cat:#7c4dff">Sección</span><h1>Videojuegos</h1><p>Noticias de videojuegos con precios, fechas y disponibilidad en México.</p></section>
 <div class="rejilla"><div class="tarjetas"><a class="tarjeta" href="/noticias/zelda-ocarina-of-time-switch-2-record-precio-mexico" data-categoria="videojuegos">
-<img class="portada" src="/img/portadas/zelda-ocarina-of-time-switch-2-record-precio-mexico.jpg" alt="" loading="lazy" width="1200" height="675">
+<img class="portada" src="https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto/f_auto/dpr_2.0/store/software/switch2/70010000130792/21d17919819cffebda2817f9b0110116c28568e0b6fa30a9778f1679271be809" alt="Imagen oficial de The Legend of Zelda: Ocarina of Time para Nintendo Switch 2" width="1200" height="675" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='/img/portadas/zelda-ocarina-of-time-switch-2-record-precio-mexico.jpg'" loading="lazy">
 <div class="texto"><span class="chip" style="--cat:#7c4dff">Videojuegos</span> <span class="fecha">· <time datetime="2026-11-11T13:30:00-06:00" title="11 nov 2026, 13:30 (hora del centro de México)">11 nov 2026</time><span class="hace" data-desde="2026-11-11T13:30:00-06:00"></span></span>
 <h3>Zelda: Ocarina of Time rompe récord en Switch 2: esto cuesta en México</h3><p>5.2 millones en cuatro días, qué trae de nuevo y cuánto cuesta en México: digital contra física.</p><span class="dato-mx">🇲🇽 Digital: $1,229 MXN en la eShop de México</span></div></a>
 <a class="tarjeta" href="/noticias/ps-plus-noviembre-2026" data-categoria="videojuegos">
-<img class="portada" src="/img/portadas/ps-plus-noviembre-2026.jpg" alt="" loading="lazy" width="1200" height="675">
+<img class="portada" src="https://blog.playstation.com/tachyon/2026/11/6ae8af767f59801bb5a0ceabf7fe915f00eed004.jpg" alt="Imagen oficial del catálogo de PlayStation Plus de noviembre de 2026" width="1200" height="675" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='/img/portadas/ps-plus-noviembre-2026.jpg'" loading="lazy">
 <div class="texto"><span class="chip" style="--cat:#7c4dff">Videojuegos</span> <span class="fecha">· <time datetime="2026-11-11T10:00:00-06:00" title="11 nov 2026, 10:00 (hora del centro de México)">11 nov 2026</time><span class="hace" data-desde="2026-11-11T10:00:00-06:00"></span></span>
 <h3>PS Plus de noviembre: Death Stranding 2 encabeza 10 juegos nuevos</h3><p>Qué llega a Extra y Deluxe, en qué fecha, y cuánto cuesta cada plan en México.</p><span class="dato-mx">🇲🇽 PS Plus Extra: $229 MXN al mes</span></div></a>
 </div><aside class="lateral">
@@ -69,6 +69,10 @@
 var m=(a-new Date(s.dataset.desde))/6e4,t;if(!(m>=0))return;
 if(m<60)t='hace '+Math.max(1,Math.round(m))+' min';else if(m<1440)t='hace '+Math.round(m/60)+' h';
 else if(m<2880)t='ayer';else if(m<10080)t='hace '+Math.round(m/1440)+' días';else return;s.textContent=t;});})();
+document.querySelectorAll('.yt').forEach(function(y){y.querySelector('button').addEventListener('click',function(){
+var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+y.dataset.id+'?autoplay=1&rel=0';
+f.title=y.querySelector('button').getAttribute('aria-label');f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;
+y.innerHTML='';y.appendChild(f);});});
 </script>
 </body>
 </html>
