@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tecnología — Pixel Pesos</title>
 <meta name="description" content="Noticias de tecnología con precios, fechas y disponibilidad en México.">
+<meta name="robots" content="noindex">
 <link rel="canonical" href="https://pixelpesos.pages.dev/categoria/tecnologia">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="alternate" type="application/rss+xml" title="Pixel Pesos" href="/feed.xml">
@@ -61,6 +62,10 @@
 var m=(a-new Date(s.dataset.desde))/6e4,t;if(!(m>=0))return;
 if(m<60)t='hace '+Math.max(1,Math.round(m))+' min';else if(m<1440)t='hace '+Math.round(m/60)+' h';
 else if(m<2880)t='ayer';else if(m<10080)t='hace '+Math.round(m/1440)+' días';else return;s.textContent=t;});})();
+document.querySelectorAll('.yt').forEach(function(y){y.querySelector('button').addEventListener('click',function(){
+var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+y.dataset.id+'?autoplay=1&rel=0';
+f.title=y.querySelector('button').getAttribute('aria-label');f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;
+y.innerHTML='';y.appendChild(f);});});
 </script>
 </body>
 </html>

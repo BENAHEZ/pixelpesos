@@ -1,3 +1,2 @@
 User-agent: *
-Allow: /
-Sitemap: https://pixelpesos.pages.dev/sitemap.xml
+Disallow: /
