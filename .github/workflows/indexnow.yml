@@ -1,0 +1,31 @@
+# Avisa a Bing (y a los buscadores que usan IndexNow) qué páginas cambiaron en cada publicación.
+# Vive en el repo BENAHEZ/pixelpesos (.github/workflows/). publicar.sh lo copia ahí.
+name: IndexNow
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}   # botón "Run workflow": manda todas las páginas del sitemap
+jobs:
+  avisar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Enviar páginas cambiadas a IndexNow
+        env:
+          HOST: pixeltlan.pages.dev
+          KEY: 3c7c3638d250abab0e96dd3ccdeeef3f
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            lista=$(grep -o '<loc>[^<]*' sitemap.xml | sed 's#<loc>##')
+          else
+              cambios=$(git diff --name-only HEAD~1 HEAD -- '*.html' | grep -v '^google' | grep -v '^404.html' || true)
+            [ -z "$cambios" ] && { echo "Sin páginas nuevas o cambiadas"; exit 0; }
+            lista=$(echo "$cambios" | sed -e 's#index\.html$##' -e 's#\.html$##' -e "s#^#https://$HOST/#")
+          fi
+          urls=$(echo "$lista" | jq -R . | jq -s .)
+          echo "Esperando 2 min a que Cloudflare publique…"; sleep 120
+          echo "$urls"
+          body=$(jq -n --arg h "$HOST" --arg k "$KEY" --argjson u "$urls" '{host:$h,key:$k,keyLocation:("https://"+$h+"/"+$k+".txt"),urlList:$u}')
+          curl -sS -w "\nHTTP %{http_code}\n" -X POST https://api.indexnow.org/indexnow -H 'Content-Type: application/json; charset=utf-8' -d "$body"
