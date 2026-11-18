@@ -6,6 +6,8 @@
 
 ## Notas recientes
 
+- [GTA VI en Xbox One por la nube: qué necesitas y cuánto cuesta en México](https://pixeltlan.pages.dev/noticias/gta-vi-xbox-one-nube-cuanto-cuesta-mexico)
+- [GTA VI sale el jueves: cómo no caer en descargas falsas](https://pixeltlan.pages.dev/noticias/gta-vi-descargas-falsas-como-evitar-fraudes)
 - [ChatGPT ya puede comprar por ti: ¿se puede usar en México?](https://pixeltlan.pages.dev/noticias/chatgpt-wallet-compras-ia-mexico)
 - [Buen Fin 2026 en PlayStation: hasta cuándo duran las ofertas en cada tienda](https://pixeltlan.pages.dev/noticias/playstation-ofertas-imperdibles-buen-fin-2026)
 - [GTA VI ya se puede precargar: precio exacto en cada tienda de México](https://pixeltlan.pages.dev/noticias/gta-vi-precarga-precio-mexico)
