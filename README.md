@@ -6,6 +6,7 @@
 
 ## Notas recientes
 
+- [GTA VI ya salió: extras gratis y precio exacto en México](https://pixeltlan.pages.dev/noticias/gta-vi-ya-disponible-extras-precio-mexico)
 - [The Game Awards 2026: nominados a Juego del Año y a qué hora verlo en México](https://pixeltlan.pages.dev/noticias/the-game-awards-2026-nominados-horario-mexico)
 - [GTA VI en Xbox One por la nube: qué necesitas y cuánto cuesta en México](https://pixeltlan.pages.dev/noticias/gta-vi-xbox-one-nube-cuanto-cuesta-mexico)
 - [GTA VI sale el jueves: cómo no caer en descargas falsas](https://pixeltlan.pages.dev/noticias/gta-vi-descargas-falsas-como-evitar-fraudes)
