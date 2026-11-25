@@ -1,6 +1,6 @@
 # Pixeltlán
 
-**Videojuegos y tecnología para México.** Noticias con lo que importa aquí: precio exacto en pesos, fecha y disponibilidad en México, y siempre la fuente oficial.
+**Videojuegos, PC, tecnología y ofertas para México.** Noticias con lo que importa aquí: precio exacto en pesos, fecha y disponibilidad en México, y siempre la fuente oficial.
 
 **Sitio:** https://pixeltlan.com/
 
