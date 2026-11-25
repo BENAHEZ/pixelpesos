@@ -6,6 +6,7 @@
 
 ## Notas recientes
 
+- [Monster Hunter Rise llega al celular sin costo extra con Netflix](https://pixeltlan.com/noticias/monster-hunter-rise-netflix-celular-mexico)
 - [GTA VI ya salió: extras gratis y precio exacto en México](https://pixeltlan.com/noticias/gta-vi-ya-disponible-extras-precio-mexico)
 - [The Game Awards 2026: nominados a Juego del Año y a qué hora verlo en México](https://pixeltlan.com/noticias/the-game-awards-2026-nominados-horario-mexico)
 - [GTA VI en Xbox One por la nube: qué necesitas y cuánto cuesta en México](https://pixeltlan.com/noticias/gta-vi-xbox-one-nube-cuanto-cuesta-mexico)
