@@ -284,7 +284,19 @@ body.con-anuncios .lateral .anuncio{min-height:600px;margin:0;position:sticky;to
 .pie a{color:var(--muted)}
 .pie a:hover{color:var(--fg)}
 .pie .redes{border-top:0;padding-top:0}
-.pie .redes span{font-weight:700}
+.redes-titulo{width:100%;font:700 .72rem/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--coral);margin-bottom:2px}
+.redes .red{display:inline-flex;align-items:center;gap:8px;padding:8px 14px 8px 9px;border-radius:999px;color:#fff;text-decoration:none;font:700 .86rem/1 var(--font-body);box-shadow:0 2px 0 rgba(0,0,0,.25);transition:transform .15s ease,filter .15s ease}
+.redes .red:hover,.redes .red:focus-visible{transform:translateY(-2px);filter:brightness(1.1)}
+.redes .red svg{width:20px;height:20px;fill:currentColor;flex:none}
+.red-tiktok{background:#000;border:1px solid #2a2a2a}
+.red-instagram{background:linear-gradient(45deg,#f09433,#e6683c 30%,#dc2743 55%,#cc2366 78%,#bc1888)}
+.red-youtube{background:#ff0000}
+.red-facebook{background:#0866ff}
+.red-threads{background:#000;border:1px solid #2a2a2a}
+.lateral .redes .red span{display:none}
+.lateral .redes{gap:8px}
+.lateral .redes .red{padding:9px;border-radius:50%}
+.lateral .redes .red svg{width:22px;height:22px}
 @media (max-width:720px){.pie .envoltura{grid-template-columns:minmax(0,1fr)}}
 
 /* ---- Accesibilidad ---- */
