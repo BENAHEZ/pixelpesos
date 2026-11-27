@@ -6,6 +6,7 @@
 
 ## Notas recientes
 
+- [Silksong tendrá expansión gratis el 11 de diciembre: Sea of Sorrow](https://pixeltlan.com/noticias/hollow-knight-silksong-sea-of-sorrow-gratis)
 - [Ofertas de Black Friday en México: 8 juegos con hasta 90% menos](https://pixeltlan.com/noticias/ofertas-semana-mexico-2026-11-27)
 - [Black Friday en GOG: los mejores juegos de PC en oferta](https://pixeltlan.com/noticias/black-friday-gog-juegos-pc-ofertas-2026)
 - [Claude ya convierte lo que crea en apps para tu PC y tu Mac](https://pixeltlan.com/noticias/claude-artifacts-apps-pc-mac-mexico)
