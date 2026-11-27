@@ -223,7 +223,7 @@ h1,h2,h3{text-wrap:balance}
 .precio-mx s{color:var(--muted)}
 .precio-mx.con-fotos li{grid-template-columns:124px minmax(0,1fr) auto;grid-template-areas:"foto tienda monto" "foto detalle accion"}
 .precio-mx .mini{grid-area:foto;display:block;width:124px;aspect-ratio:16/9;object-fit:cover;border-radius:6px;background:var(--s1)}
-@media (max-width:560px){.precio-mx.con-fotos li{grid-template-columns:84px minmax(0,1fr) auto;grid-template-areas:"foto tienda tienda" "foto detalle detalle" "foto monto accion"}.precio-mx.con-fotos .monto{text-align:left}.precio-mx .mini{width:84px}}
+@media (max-width:560px){.precio-mx.con-fotos li{grid-template-columns:84px minmax(0,1fr);grid-template-areas:"foto tienda" "foto detalle" "foto monto" "foto accion"}.precio-mx.con-fotos .monto{text-align:left}.precio-mx.con-fotos li>a{justify-self:start}.precio-mx .mini{width:84px}}
 .precio-mx li>a{grid-area:accion;justify-self:end;font:700 .74rem/1.2 var(--font-mono);letter-spacing:.04em;text-transform:uppercase;text-decoration:none;color:var(--cielo);white-space:nowrap}
 .precio-mx li>a:hover{color:var(--fg);text-decoration:underline}
 .precio-mx li.mejor{background:var(--mejor)}
