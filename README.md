@@ -6,6 +6,7 @@
 
 ## Notas recientes
 
+- [Black Friday en GOG: los mejores juegos de PC en oferta](https://pixeltlan.com/noticias/black-friday-gog-juegos-pc-ofertas-2026)
 - [Claude ya convierte lo que crea en apps para tu PC y tu Mac](https://pixeltlan.com/noticias/claude-artifacts-apps-pc-mac-mexico)
 - [Monster Hunter Rise llega al celular sin costo extra con Netflix](https://pixeltlan.com/noticias/monster-hunter-rise-netflix-celular-mexico)
 - [GTA VI ya salió: extras gratis y precio exacto en México](https://pixeltlan.com/noticias/gta-vi-ya-disponible-extras-precio-mexico)
